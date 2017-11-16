@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Camera scanner tests</title>
+  </head>
+  <body>
+    <p>Please refer to the javascript console.</p>
+
+    <script type="text/javascript" src="scanner.js"></script>
+    <script type="text/javascript" src="tests.js"></script>
+
+    <script type="text/javascript">
+      let tests_passed = true;
+      function fail(){
+        console.log("\tFailed.");
+        tests_passed = false;
+      }
+
+      if(!test_unscanned_cameras_are_scanned()) fail();
+      if(!test_largest_data_is_identified()) fail();
+      if(!test_largest_image_count_is_identified()) fail();
+      if(!test_largest_image_for_each_camera_is_identified()) fail();
+
+      console.log("\nDone.");
+      console.log("Tests " + (tests_passed ? "passed" : "failed") + ".");
+    </script>
+  </body>
+</html>
