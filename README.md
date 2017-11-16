@@ -24,3 +24,6 @@ The following methods can be called on the scanner to query for aggregate inform
 
 ## Testing
 Unit tests are provided in the `tests.js` file and an example run of the suite is provided in `test.html`
+
+### After-scan callback
+If `camera_scanner.end_scan_callback` is defined it will be called when the last camera has been scanned or timed out. This can be useful for testing.
