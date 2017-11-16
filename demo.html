@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Camera scanner functional demo</title>
+  </head>
+  <body>
+    <p>Please refer to the javascript console.</p>
+    
+    <script type="text/javascript" src="scanner.js"></script>
+    <script type="text/javascript" src="test_data.js"></script>
+      
+    <script type="text/javascript">
+
+/*
+      // 
+      // Note, URL-based version must be uploaded to the server it is requesting from to prevent Cross-Origin Request errors
+      //
+
+      url_scanner = camera_scanner.create([0, 1, 2, 3], 10000, "http://domain.com/camera/", true);
+      url_scanner.end_scan_callback = function(){
+        console.log("Camera with the most data:");
+        console.log(url_scanner.get_camera_id_with_most_data());
+
+        console.log("Camera with the most images:");
+        console.log(url_scanner.get_camera_id_with_most_images());
+
+        console.log("Largest image for each camera");
+        console.log(url_scanner.get_largest_images_per_camera());
+      }
+      url_scanner.run_scans();
+*/
+
+
+      //
+      // Test version can be run against offline test data
+      //
+      test_scanner = camera_scanner.create([0, 1, 2, 3, 4, 5, 6], 10000, test_cameras.request_camera_data, true);
+      test_scanner.end_scan_callback = function(){
+        console.log("Camera with the most data:");
+        console.log(test_scanner.get_camera_id_with_most_data());
+
+        console.log("Camera with the most images:");
+        console.log(test_scanner.get_camera_id_with_most_images());
+
+        console.log("Largest image for each camera");
+        console.log(test_scanner.get_largest_images_per_camera());
+      }
+      test_scanner.run_scans();
+    </script>
+  </body>
+</html>
