@@ -98,7 +98,7 @@ const camera_scanner = (function(){
 
   function handle_response(scanner, camera_id, response){
     let parsed_response = JSON.parse(response);
-    if(parsed_response["camera_id"])
+    if(parsed_response["camera_id"] != undefined)
       record_camera_response(scanner, camera_id, parsed_response);
 
     remove_from_unscanned_list(scanner, camera_id);
